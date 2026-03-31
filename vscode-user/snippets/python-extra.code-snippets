@@ -1,0 +1,10 @@
+{
+  "Python debug print": {
+    "scope": "python",
+    "prefix": "pydbg",
+    "body": [
+      "print('${1:name} =', ${1:name})"
+    ],
+    "description": "Python debug print from a separate .code-snippets file"
+  }
+}

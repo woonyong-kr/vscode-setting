@@ -1,0 +1,171 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "User: npm run dev",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: npm run lint",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "lint"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: npm test",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: npm run build",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: pytest",
+      "type": "shell",
+      "command": "pytest",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: Python current file",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${file}"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: make test",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "test"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: docker compose up",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "compose",
+        "up",
+        "--build"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "User: C build current file",
+      "type": "shell",
+      "command": "mkdir -p '${fileDirname}/build' && xcrun clang -std=c17 -Wall -Wextra -g '${file}' -o '${fileDirname}/build/${fileBasenameNoExtension}'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "User: C run current file",
+      "type": "shell",
+      "command": "'${fileDirname}/build/${fileBasenameNoExtension}'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "dependsOn": "User: C build current file",
+      "problemMatcher": []
+    },
+    {
+      "label": "User: C++ build current file",
+      "type": "shell",
+      "command": "mkdir -p '${fileDirname}/build' && xcrun clang++ -std=c++17 -Wall -Wextra -g '${file}' -o '${fileDirname}/build/${fileBasenameNoExtension}'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "User: C++ run current file",
+      "type": "shell",
+      "command": "'${fileDirname}/build/${fileBasenameNoExtension}'",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "dependsOn": "User: C++ build current file",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "Console log": {
+    "prefix": "tlog",
+    "body": [
+      "console.log('${1:name}', ${1:name});"
+    ],
+    "description": "Log a variable with its label"
+  },
+  "Typed arrow function": {
+    "prefix": "tfn",
+    "body": [
+      "const ${1:name} = (${2:args}): ${3:void} => {",
+      "  ${0}",
+      "};"
+    ],
+    "description": "Insert a typed arrow function"
+  },
+  "Interface": {
+    "prefix": "iface",
+    "body": [
+      "interface ${1:Name} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Insert an interface"
+  }
+}

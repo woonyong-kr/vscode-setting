@@ -1,0 +1,25 @@
+{
+  "If main": {
+    "prefix": "pmain",
+    "body": [
+      "if __name__ == \"__main__\":",
+      "    ${0}"
+    ],
+    "description": "Insert a main guard"
+  },
+  "Print variable": {
+    "prefix": "pprint",
+    "body": [
+      "print(${1:variable})"
+    ],
+    "description": "Print a variable"
+  },
+  "Pytest test": {
+    "prefix": "pytestfn",
+    "body": [
+      "def test_${1:name}():",
+      "    ${0}"
+    ],
+    "description": "Insert a pytest test function"
+  }
+}
