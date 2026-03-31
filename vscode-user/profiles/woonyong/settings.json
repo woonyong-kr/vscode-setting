@@ -3,8 +3,8 @@
   "code-runner.saveFileBeforeRun": true,
   "code-runner.clearPreviousOutput": true,
   "code-runner.executorMap": {
-    "c": "cd $dir && mkdir -p build && clang -std=c17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt",
-    "cpp": "cd $dir && mkdir -p build && clang++ -std=c++17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt"
+    "c": "cd $dir && mkdir -p build && xcrun clang -std=c17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt",
+    "cpp": "cd $dir && mkdir -p build && xcrun clang++ -std=c++17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt"
   },
   "claudeCode.preferredLocation": "panel",
   "git.autofetch": true,
@@ -254,5 +254,15 @@
     "editor.insertSpaces": true
   },
   "editor.formatOnPaste": true,
-  "editor.formatOnType": true
+  "editor.formatOnType": true,
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontSize": 13,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.renderLineHighlight": "all",
+  "C_Cpp.default.compilerPath": "/Library/Developer/CommandLineTools/usr/bin/clang",
+  "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.cppStandard": "c++17"
 }
