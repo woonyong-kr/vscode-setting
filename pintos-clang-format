@@ -1,0 +1,78 @@
+# PintOS C Coding Style (GNU 기반)
+# 저장 시 자동 포맷팅됨 (editor.formatOnSave: true)
+#
+# 주요 규칙:
+#   - 탭 인덴트 (TabWidth: 4)
+#   - 함수 반환형과 이름은 별도 줄 (AlwaysBreakAfterReturnType: TopLevel)
+#   - 함수 호출/선언 시 괄호 앞 공백: func (arg)
+#   - 여는 중괄호 {는 같은 줄 (K&R 스타일)
+#   - 한 줄 최대 79자
+#   - case 문은 switch와 같은 레벨
+#   - 포인터 *는 변수 쪽: int *ptr
+#   - 빈 줄은 최대 1줄 (MaxEmptyLinesToKeep: 1)
+
+BasedOnStyle: GNU
+Language: Cpp
+
+# ── 인덴트 ──
+UseTab: ForIndentation
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 8
+IndentCaseLabels: false
+IndentGotoLabels: false
+NamespaceIndentation: None
+
+# ── 줄 길이 ──
+ColumnLimit: 79
+
+# ── 함수 선언 ──
+# GNU 스타일: 반환형이 최상위 함수면 별도 줄
+AlwaysBreakAfterReturnType: TopLevel
+AlwaysBreakAfterDefinitionReturnType: TopLevel
+
+# ── 중괄호 ──
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterStruct: false
+  AfterUnion: false
+  BeforeElse: false
+  BeforeWhile: false
+  SplitEmptyFunction: false
+
+# ── 공백 ──
+SpaceBeforeParens: Always
+SpaceInEmptyParentheses: false
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+SpacesBeforeTrailingComments: 1
+
+# ── 포인터/참조 ──
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+# ── 정렬 ──
+AlignConsecutiveMacros: true
+AlignConsecutiveDeclarations: false
+AlignConsecutiveAssignments: false
+AlignTrailingComments: true
+AlignEscapedNewlines: Left
+AlignOperands: true
+
+# ── include 정렬 ──
+SortIncludes: false
+IncludeBlocks: Preserve
+
+# ── 기타 ──
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+MaxEmptyLinesToKeep: 1
+KeepEmptyLinesAtTheStartOfBlocks: false
