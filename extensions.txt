@@ -1,0 +1,74 @@
+# === 핵심 테마/UX ===
+zhuangtongfa.material-theme
+chadalen.vscode-jetbrains-icon-theme
+k--kato.intellij-idea-keybindings
+compassak.intellij-idea-new-ui
+ms-ceintl.vscode-language-pack-ko
+
+# === 에디터 도구 ===
+formulahendry.code-runner
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+editorconfig.editorconfig
+usernamehw.errorlens
+streetsidesoftware.code-spell-checker
+mechatroner.rainbow-csv
+tomoki1207.pdf
+caponetto.vscode-diff-viewer
+
+# === 북마크/TODO ===
+alefragnani.bookmarks
+gruntfuggly.todo-tree
+
+# === Git ===
+eamodio.gitlens
+mhutchie.git-graph
+github.vscode-github-actions
+github.remotehub
+
+# === C/C++ ===
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cpptools-themes
+ms-vscode.cmake-tools
+ms-vscode.makefile-tools
+
+# === Python ===
+ms-python.python
+ms-python.vscode-pylance
+ms-python.black-formatter
+ms-python.pylint
+ms-python.debugpy
+
+# === Web (JS/TS/HTML/CSS) ===
+esbenp.prettier-vscode
+dbaeumer.vscode-eslint
+bradlc.vscode-tailwindcss
+astro-build.astro-vscode
+
+# === Markdown ===
+yzhang.markdown-all-in-one
+bierner.markdown-preview-github-styles
+bierner.markdown-mermaid
+davidanson.vscode-markdownlint
+
+# === Remote/Container ===
+ms-vscode-remote.vscode-remote-extensionpack
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode-remote.remote-wsl
+ms-vscode.remote-explorer
+ms-vscode.remote-repositories
+ms-azuretools.vscode-docker
+ms-azuretools.vscode-containers
+
+# === AI ===
+anthropic.claude-code
+
+# === 기타 ===
+ms-vscode.live-server
+zhucy.project-tree
+
+# === Pintos ===
+yoojinkoh.pintos-test-explorer
