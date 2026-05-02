@@ -74,10 +74,8 @@ vscode-setting/
 | `F9` | Toggle Breakpoint | Debug |
 | `Shift+F9` | Selection to Watch | Debug |
 | `Cmd+F11` | Go to Symbol (All) | Search |
-| `Alt+F9` | Toggle Bookmark | Bookmark |
-| `Cmd+F10` | List All Bookmarks | Bookmark |
-| `Alt+]` | Jump to Next Bookmark | Bookmark |
-| `Alt+[` | Jump to Previous Bookmark | Bookmark |
+| `Ctrl+Up/Down` | 인덴트 단위 커서 이동 | Navigation |
+| `Alt+A` | 괄호 안 내용 선택 | Selection |
 
 ### Language-specific Formatters
 
@@ -91,13 +89,13 @@ vscode-setting/
 
 공통 설정: `formatOnSave: true`, `formatOnPaste: true`, `formatOnType: true`, `trimTrailingWhitespace: true`, `insertFinalNewline: true`
 
-### Extensions (75+ items)
+### Extensions
 
 `extensions.txt`에 카테고리별로 정리되어 있습니다. 주요 카테고리:
 
 - **Theme/UX**: One Dark Pro, JetBrains Icon Theme, IntelliJ Keybindings
 - **Editor Tools**: Code Runner, Error Lens, EditorConfig, Rainbow CSV
-- **Bookmark/TODO**: Bookmarks, Todo Tree
+- **Navigation/Selection**: Indentation Level Movement, Bracket Select, Project Manager
 - **Git**: GitLens, Git Graph, GitHub Actions
 - **C/C++**: cpptools, CMake, Makefile Tools
 - **Python**: Python, Pylance, Black, Pylint, debugpy
@@ -221,8 +219,9 @@ bash install.sh
      - Alt+Q → Close Tab, Shift+Alt+Q → Close All Tabs
      - F5 → Start/Continue Debug, Shift+F5 → Stop
      - F6 → Step Out, F9 → Toggle Breakpoint, Shift+F9 → Watch
-     - Cmd+F11 → Go to Symbol, Alt+F9 → Toggle Bookmark
-     - Cmd+F10 → List All Bookmarks, Alt+]/[ → Next/Prev Bookmark
+     - Cmd+F11 → Go to Symbol
+     - Ctrl+Up/Down → 인덴트 단위 커서 이동 (Indentation Level Movement)
+     - Alt+A → 괄호 안 내용 선택 (Bracket Select)
 
 3. 포맷터:
    - formatOnSave: true, formatOnPaste: true, formatOnType: true
@@ -236,8 +235,8 @@ bash install.sh
    zhuangtongfa.material-theme, chadalen.vscode-jetbrains-icon-theme,
    k--kato.intellij-idea-keybindings, formulahendry.code-runner,
    editorconfig.editorconfig, usernamehw.errorlens,
-   streetsidesoftware.code-spell-checker, alefragnani.bookmarks,
-   gruntfuggly.todo-tree, eamodio.gitlens, mhutchie.git-graph,
+   kaiwood.indentation-level-movement, chunsen.bracket-select,
+   alefragnani.project-manager, eamodio.gitlens, mhutchie.git-graph,
    ms-vscode.cpptools, ms-vscode.cpptools-extension-pack,
    ms-vscode.makefile-tools, ms-python.python, ms-python.vscode-pylance,
    ms-python.black-formatter, ms-python.pylint, esbenp.prettier-vscode,
@@ -286,7 +285,7 @@ bash install.sh
 ## 익스텐션 카테고리
 [적용] Theme/UX (One Dark Pro, JetBrains Icons, IntelliJ Keys)
 [적용] Editor Tools (Code Runner, Error Lens, EditorConfig)
-[적용] Bookmark/TODO (Bookmarks, Todo Tree)
+[적용] Navigation/Selection (Indentation Level Movement, Bracket Select, Project Manager)
 [적용] Git (GitLens, Git Graph)
 [적용] C/C++ (cpptools, Makefile Tools)
 [적용] Python (Python, Pylance, Black, Pylint)

@@ -66,7 +66,6 @@
     "chadalen.vscode-jetbrains-icon-theme",
     "k--kato.intellij-idea-keybindings",
     "mhutchie.git-graph",
-    "streetsidesoftware.code-spell-checker",
     "tomoki1207.pdf"
   ],
   "dev.containers.defaultExtensions": [
@@ -90,7 +89,6 @@
     "chadalen.vscode-jetbrains-icon-theme",
     "k--kato.intellij-idea-keybindings",
     "mhutchie.git-graph",
-    "streetsidesoftware.code-spell-checker",
     "tomoki1207.pdf"
   ],
   "[javascript]": {
@@ -311,5 +309,6 @@
   "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "editor.lineHeight": 1.6
+  "editor.lineHeight": 1.6,
+  "cSpell.enabled": false
 }

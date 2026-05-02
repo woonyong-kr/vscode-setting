@@ -11,14 +11,14 @@ formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 editorconfig.editorconfig
 usernamehw.errorlens
-streetsidesoftware.code-spell-checker
 mechatroner.rainbow-csv
 tomoki1207.pdf
 caponetto.vscode-diff-viewer
 
-# === 북마크/TODO ===
-alefragnani.bookmarks
-gruntfuggly.todo-tree
+# === 네비게이션/선택 ===
+kaiwood.indentation-level-movement
+chunsen.bracket-select
+alefragnani.project-manager
 
 # === Git ===
 eamodio.gitlens
