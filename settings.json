@@ -310,5 +310,6 @@
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.lineHeight": 1.6,
-  "cSpell.enabled": false
+  "cSpell.enabled": false,
+  "scm.diffDecorations": "none"
 }
