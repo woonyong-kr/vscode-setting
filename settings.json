@@ -280,7 +280,7 @@
   "editor.formatOnType": true,
   "files.autoSave": "onFocusChange",
   "workbench.startupEditor": "none",
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "off",
   "editor.minimap.enabled": false,
   "terminal.integrated.fontSize": 13,
   "editor.cursorSmoothCaretAnimation": "on",
