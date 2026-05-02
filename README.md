@@ -103,7 +103,7 @@ vscode-setting/
 - **Markdown**: Markdown All in One, Preview GitHub Styles, Mermaid
 - **Remote/Container**: Remote SSH, Dev Containers, Docker
 - **AI**: Claude Code
-- **Pintos**: pintos-test-explorer
+- **Jungle**: Jungle Dev Kit, pintos-test-explorer
 
 ### Remote/Container Auto-Apply
 

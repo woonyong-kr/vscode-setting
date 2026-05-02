@@ -70,5 +70,6 @@ anthropic.claude-code
 ms-vscode.live-server
 zhucy.project-tree
 
-# === Pintos ===
+# === Jungle ===
+woonyong.jungle-dev-kit
 yoojinkoh.pintos-test-explorer
