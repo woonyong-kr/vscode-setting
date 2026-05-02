@@ -54,7 +54,7 @@ vscode-setting/
 | Sticky Scroll | ON |
 | Cursor Animation | Smooth |
 | Line Highlight | All |
-| Word Wrap | ON |
+| Word Wrap | OFF |
 
 ### Custom Keybindings (IntelliJ Style)
 
@@ -209,7 +209,7 @@ bash install.sh
    - Icon Theme: JetBrains Icon Theme (chadalen.vscode-jetbrains-icon-theme)
    - Font: JetBrains Mono 14px, ligatures ON, lineHeight 1.6
    - minimap OFF, bracketPairColorization ON, stickyScroll ON
-   - cursorSmoothCaretAnimation ON, renderLineHighlight "all", wordWrap ON
+   - cursorSmoothCaretAnimation ON, renderLineHighlight "all", wordWrap OFF
 
 2. 키바인딩 (IntelliJ 스타일):
    - 기본: IntelliJ IDEA Keybindings 익스텐션 (k--kato.intellij-idea-keybindings)
@@ -243,7 +243,8 @@ bash install.sh
    dbaeumer.vscode-eslint, yzhang.markdown-all-in-one,
    bierner.markdown-preview-github-styles, ms-azuretools.vscode-docker,
    ms-vscode-remote.remote-containers, ms-vscode-remote.remote-ssh,
-   tomoki1207.pdf, mechatroner.rainbow-csv, anthropic.claude-code
+   tomoki1207.pdf, mechatroner.rainbow-csv, anthropic.claude-code,
+   woonyong.jungle-dev-kit
 
 5. Remote/Container 자동 전파:
    - settings.json에 remote.SSH.defaultExtensions, dev.containers.defaultExtensions 배열로
@@ -273,7 +274,7 @@ bash install.sh
 
 ## 키바인딩
 [적용] IntelliJ IDEA Keybindings 익스텐션
-[적용] 커스텀 단축키 (Navigate, Tab, Debug, Bookmark)
+[적용] 커스텀 단축키 (Navigate, Tab, Debug, Selection)
 
 ## 포맷터
 [적용] formatOnSave + trimTrailingWhitespace + insertFinalNewline

@@ -76,23 +76,5 @@
     {
         "key": "cmd+f11",
         "command": "workbench.action.showAllSymbols"
-    },
-
-    // ── Bookmarks (북마크) ──
-    {
-        "key": "alt+f9",
-        "command": "bookmarks.toggle"
-    },
-    {
-        "key": "cmd+f10",
-        "command": "bookmarks.listFromAllFiles"
-    },
-    {
-        "key": "alt+]",
-        "command": "bookmarks.jumpToNext"
-    },
-    {
-        "key": "alt+[",
-        "command": "bookmarks.jumpToPrevious"
     }
 ]
