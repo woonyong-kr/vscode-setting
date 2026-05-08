@@ -102,6 +102,7 @@ vscode-setting/
 - **Web**: Prettier, ESLint, Tailwind CSS, Astro
 - **Markdown**: Markdown All in One, Preview GitHub Styles, Mermaid
 - **Remote/Container**: Remote SSH, Dev Containers, Docker
+- **Diagram**: Draw.io Integration
 - **AI**: Claude Code
 - **Jungle**: Jungle Dev Kit, pintos-test-explorer
 

@@ -66,6 +66,9 @@ ms-azuretools.vscode-containers
 # === AI ===
 anthropic.claude-code
 
+# === 다이어그램 ===
+hediet.vscode-drawio
+
 # === 기타 ===
 ms-vscode.live-server
 zhucy.project-tree
