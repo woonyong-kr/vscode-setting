@@ -29,6 +29,7 @@ vscode-setting/
 ├── pintos-clang-format      ← PintOS C 코딩 스타일 (.clang-format)
 ├── vscode-user/             ← VS Code User 디렉토리 백업
 │   ├── settings.json
+│   ├── keybindings.json
 │   ├── snippets/            ← 언어별 코드 스니펫
 │   └── profiles/woonyong/   ← 프로필별 설정/스니펫
 └── scripts/
@@ -74,6 +75,9 @@ vscode-setting/
 | `F9` | Toggle Breakpoint | Debug |
 | `Shift+F9` | Selection to Watch | Debug |
 | `Cmd+F11` | Go to Symbol (All) | Search |
+| `Alt+F9` | Toggle Bookmark | Bookmark |
+| `Cmd+F10` | List Bookmarks | Bookmark |
+| `Alt+[` / `Alt+]` | Previous/Next Bookmark | Bookmark |
 | `Ctrl+Up/Down` | 인덴트 단위 커서 이동 | Navigation |
 | `Alt+A` | 괄호 안 내용 선택 | Selection |
 
@@ -94,8 +98,8 @@ vscode-setting/
 `extensions.txt`에 카테고리별로 정리되어 있습니다. 주요 카테고리:
 
 - **Theme/UX**: One Dark Pro, JetBrains Icon Theme, IntelliJ Keybindings
-- **Editor Tools**: Code Runner, Error Lens, EditorConfig, Rainbow CSV
-- **Navigation/Selection**: Indentation Level Movement, Bracket Select, Project Manager
+- **Editor Tools**: Code Runner, Error Lens, EditorConfig, Spell Checker, Rainbow CSV
+- **Navigation/Selection**: Indentation Level Movement, Bracket Select, Project Manager, Bookmarks
 - **Git**: GitLens, Git Graph, GitHub Actions
 - **C/C++**: cpptools, CMake, Makefile Tools
 - **Python**: Python, Pylance, Black, Pylint, debugpy

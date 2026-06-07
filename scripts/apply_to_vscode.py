@@ -37,6 +37,7 @@ profile_location = find_profile_location()
 profile_dir = USER_DIR / 'profiles' / profile_location
 
 mirror(SNAPSHOT_ROOT / 'settings.json', USER_DIR / 'settings.json')
+mirror(SNAPSHOT_ROOT / 'keybindings.json', USER_DIR / 'keybindings.json')
 mirror(SNAPSHOT_ROOT / 'tasks.json', USER_DIR / 'tasks.json')
 mirror(SNAPSHOT_ROOT / 'snippets', USER_DIR / 'snippets')
 mirror(SNAPSHOT_ROOT / 'profiles' / PROFILE_NAME / 'settings.json', profile_dir / 'settings.json')

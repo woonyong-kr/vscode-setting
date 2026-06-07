@@ -4,20 +4,20 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.executorMap": {
     "c": "cd $dir && mkdir -p build && xcrun clang -std=c17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt",
-    "cpp": "cd $dir && mkdir -p build && xcrun clang++ -std=c++17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt"
+    "cpp": "cd $dir && mkdir -p build && xcrun clang++ -std=c++17 -Wall -Wextra -g -o build/$fileNameWithoutExt $fileName && ./build/$fileNameWithoutExt",
   },
   "claudeCode.preferredLocation": "panel",
   "git.autofetch": true,
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "One Dark Pro",
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
-    "python": true
+    "python": true,
   },
   "makefile.configureOnOpen": true,
-  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdown.extension.preview.autoShowPreviewToSide": false,
   "markdown.preview.scrollPreviewWithEditor": true,
   "markdown.preview.scrollEditorWithPreview": true,
   "markdown.preview.markEditorSelection": true,
@@ -26,7 +26,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
   },
   "editor.stickyScroll.enabled": true,
   "breadcrumbs.enabled": true,
@@ -34,6 +34,10 @@
   "editor.guides.bracketPairs": "active",
   "editor.guides.indentation": true,
   "editor.tabCompletion": "on",
+  "editor.inlayHints.enabled": "on",
+  "editor.parameterHints.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.renderWhitespace": "selection",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
@@ -52,7 +56,18 @@
     "ms-python.black-formatter",
     "ms-python.pylint",
     "bierner.markdown-preview-github-styles",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cpptools",
+    "ms-vscode.makefile-tools",
+    "ms-azuretools.vscode-docker",
+    "formulahendry.code-runner",
+    "zhuangtongfa.material-theme",
+    "chadalen.vscode-jetbrains-icon-theme",
+    "k--kato.intellij-idea-keybindings",
+    "mhutchie.git-graph",
+    "streetsidesoftware.code-spell-checker",
+    "tomoki1207.pdf",
   ],
   "dev.containers.defaultExtensions": [
     "editorconfig.editorconfig",
@@ -65,59 +80,68 @@
     "ms-python.black-formatter",
     "ms-python.pylint",
     "bierner.markdown-preview-github-styles",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cpptools",
+    "ms-vscode.makefile-tools",
+    "ms-azuretools.vscode-docker",
+    "formulahendry.code-runner",
+    "zhuangtongfa.material-theme",
+    "chadalen.vscode-jetbrains-icon-theme",
+    "k--kato.intellij-idea-keybindings",
+    "mhutchie.git-graph",
+    "streetsidesoftware.code-spell-checker",
+    "tomoki1207.pdf",
   ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "files.eol": "\n",
   "files.encoding": "utf8",
   "prettier.printWidth": 80,
@@ -133,31 +157,28 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
   ],
   "eslint.format.enable": false,
   "eslint.run": "onSave",
   "eslint.options": {
     "overrideConfig": {
       "rules": {
-        "semi": [
-          "error",
-          "always"
-        ],
+        "semi": ["error", "always"],
         "quotes": [
           "error",
           "single",
           {
             "avoidEscape": true,
-            "allowTemplateLiterals": true
-          }
+            "allowTemplateLiterals": true,
+          },
         ],
         "indent": [
           "error",
           2,
           {
-            "SwitchCase": 1
-          }
+            "SwitchCase": 1,
+          },
         ],
         "comma-dangle": [
           "error",
@@ -166,55 +187,34 @@
             "objects": "always-multiline",
             "imports": "always-multiline",
             "exports": "always-multiline",
-            "functions": "always-multiline"
-          }
+            "functions": "always-multiline",
+          },
         ],
-        "object-curly-spacing": [
-          "error",
-          "never"
-        ],
-        "array-bracket-spacing": [
-          "error",
-          "never"
-        ],
-        "computed-property-spacing": [
-          "error",
-          "never"
-        ],
-        "space-before-function-paren": [
-          "error",
-          "never"
-        ],
+        "object-curly-spacing": ["error", "never"],
+        "array-bracket-spacing": ["error", "never"],
+        "computed-property-spacing": ["error", "never"],
+        "space-before-function-paren": ["error", "never"],
         "keyword-spacing": "error",
         "space-infix-ops": "error",
         "comma-spacing": [
           "error",
           {
             "before": false,
-            "after": true
-          }
+            "after": true,
+          },
         ],
         "key-spacing": [
           "error",
           {
             "beforeColon": false,
-            "afterColon": true
-          }
+            "afterColon": true,
+          },
         ],
         "no-multi-spaces": "error",
         "no-trailing-spaces": "error",
-        "eol-last": [
-          "error",
-          "always"
-        ],
-        "curly": [
-          "error",
-          "multi-line"
-        ],
-        "quote-props": [
-          "error",
-          "as-needed"
-        ],
+        "eol-last": ["error", "always"],
+        "curly": ["error", "multi-line"],
+        "quote-props": ["error", "as-needed"],
         "max-len": [
           "error",
           {
@@ -222,41 +222,44 @@
             "ignoreUrls": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
-            "ignoreRegExpLiterals": true
-          }
-        ]
-      }
-    }
+            "ignoreRegExpLiterals": true,
+          },
+        ],
+      },
+    },
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.tabSize": 4,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "pylint.enabled": true,
   "pylint.importStrategy": "useBundled",
   "pylint.args": [
-    "--max-line-length=80"
+    "--max-line-length=80",
+    "--errors-only",
+    "--disable=E1136",
   ],
+  "python.analysis.typeCheckingMode": "off",
   "C_Cpp.formatting": "clangFormat",
   "C_Cpp.clang_format_style": "file",
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "C_Cpp.clang_format_sortIncludes": true,
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
   },
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
   },
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "files.autoSave": "onFocusChange",
   "workbench.startupEditor": "none",
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "off",
   "editor.minimap.enabled": false,
   "terminal.integrated.fontSize": 13,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -264,5 +267,31 @@
   "C_Cpp.default.compilerPath": "/Library/Developer/CommandLineTools/usr/bin/clang",
   "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
   "C_Cpp.default.cStandard": "c17",
-  "C_Cpp.default.cppStandard": "c++17"
+  "C_Cpp.default.cppStandard": "c++17",
+  "redhat.telemetry.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCIICharacters": false,
+  "workbench.sideBar.location": "left",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "chat.viewSessions.orientation": "stacked",
+  "git.ignoreRebaseWarning": true,
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT",
+    },
+  ],
+  "explorer.confirmDelete": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme",
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
+  "cSpell.enabled": false,
+  "scm.diffDecorations": "none",
+  "git.enableSmartCommit": true,
+  "hediet.vscode-drawio.resizeImages": null,
+  "debug.onTaskErrors": "debugAnyway",
 }

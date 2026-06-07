@@ -43,11 +43,14 @@ profile_dir = USER_DIR / "profiles" / profile_location
 repo_profile = SNAPSHOT_ROOT / "profiles" / PROFILE_NAME
 
 mirror(USER_DIR / "settings.json", SNAPSHOT_ROOT / "settings.json")
+mirror(USER_DIR / "keybindings.json", SNAPSHOT_ROOT / "keybindings.json")
 mirror(USER_DIR / "tasks.json", SNAPSHOT_ROOT / "tasks.json")
 mirror(USER_DIR / "snippets", SNAPSHOT_ROOT / "snippets")
 mirror(profile_dir / "settings.json", repo_profile / "settings.json")
 mirror(profile_dir / "tasks.json", repo_profile / "tasks.json")
 mirror(profile_dir / "snippets", repo_profile / "snippets")
+mirror(USER_DIR / "settings.json", REPO_ROOT / "settings.json")
+mirror(USER_DIR / "keybindings.json", REPO_ROOT / "keybindings.json")
 
 global_exts = subprocess.check_output(
     ["code", "--list-extensions", "--show-versions"],
