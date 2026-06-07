@@ -108,7 +108,7 @@ vscode-setting/
 - **Remote/Container**: Remote SSH, Dev Containers, Docker
 - **Diagram**: Draw.io Integration
 - **AI**: Claude Code
-- **Jungle**: Jungle Dev Kit, pintos-test-explorer
+- **Jungle**: pintos-test-explorer
 
 ### Remote/Container Auto-Apply
 
@@ -248,8 +248,7 @@ bash install.sh
    dbaeumer.vscode-eslint, yzhang.markdown-all-in-one,
    bierner.markdown-preview-github-styles, ms-azuretools.vscode-docker,
    ms-vscode-remote.remote-containers, ms-vscode-remote.remote-ssh,
-   tomoki1207.pdf, mechatroner.rainbow-csv, anthropic.claude-code,
-   woonyong.jungle-dev-kit
+   tomoki1207.pdf, mechatroner.rainbow-csv, anthropic.claude-code
 
 5. Remote/Container 자동 전파:
    - settings.json에 remote.SSH.defaultExtensions, dev.containers.defaultExtensions 배열로

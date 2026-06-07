@@ -76,5 +76,4 @@ ms-vscode.live-server
 zhucy.project-tree
 
 # === Jungle ===
-woonyong.jungle-dev-kit
 yoojinkoh.pintos-test-explorer
