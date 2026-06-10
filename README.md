@@ -7,13 +7,32 @@ IntelliJ에서 넘어온 개발자를 위한 세팅으로, One Dark Pro 테마 +
 
 ## Quick Start
 
+### macOS / Linux
+
 ```bash
 git clone <이 레포 URL> ~/workspace/vscode-setting
 cd ~/workspace/vscode-setting
 bash install.sh
 ```
 
-스크립트가 자동으로 기존 settings.json 백업 후 덮어쓰기합니다.
+### Windows
+
+```powershell
+git clone <이 레포 URL> $HOME\workspace\vscode-setting
+cd $HOME\workspace\vscode-setting
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+스크립트가 기존 VS Code User 설정을 백업한 뒤 settings, keybindings, tasks, snippets, extensions를 복원합니다.
+
+프로필까지 더 가깝게 맞추려면 VS Code에서 `woonyong` 프로필을 만든 뒤 아래를 실행합니다.
+
+```bash
+python3 scripts/apply_to_vscode.py
+python3 scripts/install_extensions.py
+```
+
+운영 원칙과 재현 범위는 [Environment Manager](docs/environment-manager.md)에 정리되어 있습니다.
 
 ---
 
@@ -23,10 +42,13 @@ bash install.sh
 vscode-setting/
 ├── README.md                ← 이 문서
 ├── install.sh               ← 일괄 설치 스크립트 (macOS/Linux)
+├── install.ps1              ← 일괄 설치 스크립트 (Windows)
 ├── settings.json            ← VS Code 글로벌 settings.json
 ├── keybindings.json         ← IntelliJ 스타일 커스텀 단축키
 ├── extensions.txt           ← 확장 프로그램 전체 목록 (카테고리별)
 ├── pintos-clang-format      ← PintOS C 코딩 스타일 (.clang-format)
+├── docs/
+│   └── environment-manager.md
 ├── vscode-user/             ← VS Code User 디렉토리 백업
 │   ├── settings.json
 │   ├── keybindings.json
@@ -178,22 +200,27 @@ func (int a, int b) {
 ### 현재 설정 내보내기
 
 ```bash
-# settings.json 백업
-cp ~/Library/Application\ Support/Code/User/settings.json ~/workspace/vscode-setting/settings.json
-
-# keybindings.json 백업
-cp ~/Library/Application\ Support/Code/User/keybindings.json ~/workspace/vscode-setting/keybindings.json
-
-# 현재 설치된 확장 목록 내보내기
-code --list-extensions > ~/workspace/vscode-setting/extensions.txt
+python3 scripts/export_from_vscode.py
 ```
 
+이 명령은 글로벌 settings/keybindings/tasks/snippets, `woonyong` 프로필 스냅샷, 설치된 extension snapshot을 저장소에 반영합니다.
+
 ### 다른 컴퓨터에 적용
+
+macOS/Linux:
 
 ```bash
 git clone <레포URL> ~/workspace/vscode-setting
 cd ~/workspace/vscode-setting
 bash install.sh
+```
+
+Windows:
+
+```powershell
+git clone <레포URL> $HOME\workspace\vscode-setting
+cd $HOME\workspace\vscode-setting
+powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
 ---
@@ -318,7 +345,7 @@ bash install.sh
 
 ## Windows Notes
 
-Windows에서는 경로가 다릅니다.
+Windows에서는 `install.ps1`을 우선 사용합니다. 수동으로 확인할 때는 경로가 다릅니다.
 
 | 항목 | 경로 |
 |------|------|
