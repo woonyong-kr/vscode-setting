@@ -133,6 +133,16 @@ vscode-setting/
 
 `settings.json`에 `remote.SSH.defaultExtensions`와 `dev.containers.defaultExtensions`가 설정되어 있어서, SSH 원격이나 DevContainer에 접속할 때 핵심 익스텐션이 자동 설치됩니다.
 
+### Markdown Mermaid Preview
+
+Markdown UML은 ` ```mermaid ` fenced block으로 작성합니다. VS Code에서는 `bierner.markdown-mermaid` 확장으로 Markdown Preview에서 렌더링합니다.
+
+프로젝트의 `.vscode/extensions.json`은 추천 목록이며 자동 설치가 아닙니다. 미리보기에서 Mermaid가 코드 블록으로만 보이면 `code --install-extension bierner.markdown-mermaid`를 실행하거나 Extensions 패널에서 설치하세요.
+
+Cursor를 쓰는 경우 `cursor` CLI와 확장 설치 상태를 별도로 확인해야 합니다. 현재 기준 이 머신은 `cursor` CLI가 PATH에 없고 `code` CLI만 확인됩니다.
+
+계속 안 보이면 Mermaid block을 SVG로 export해서 `![UML](./diagram.svg)`로 연결합니다. 자세한 절차는 [Environment Manager](docs/environment-manager.md)의 Markdown UML and Mermaid Preview 섹션을 참고하세요.
+
 ---
 
 ## PintOS C Coding Style (.clang-format)
@@ -270,7 +280,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
    ms-vscode.makefile-tools, ms-python.python, ms-python.vscode-pylance,
    ms-python.black-formatter, ms-python.pylint, esbenp.prettier-vscode,
    dbaeumer.vscode-eslint, yzhang.markdown-all-in-one,
-   bierner.markdown-preview-github-styles, ms-azuretools.vscode-docker,
+   bierner.markdown-preview-github-styles, bierner.markdown-mermaid,
+   davidanson.vscode-markdownlint, ms-azuretools.vscode-docker,
    ms-vscode-remote.remote-containers, ms-vscode-remote.remote-ssh,
    tomoki1207.pdf, mechatroner.rainbow-csv, anthropic.claude-code
 
@@ -319,7 +330,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 [적용] C/C++ (cpptools, Makefile Tools)
 [적용] Python (Python, Pylance, Black, Pylint)
 [적용] Web (Prettier, ESLint, Tailwind)
-[적용] Markdown (All in One, Preview GitHub Styles)
+[적용] Markdown (All in One, Preview GitHub Styles, Mermaid, Markdownlint)
 [적용] Remote/Container (SSH, Dev Containers, Docker)
 [적용] AI (Claude Code)
 

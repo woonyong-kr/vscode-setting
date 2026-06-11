@@ -9,12 +9,12 @@ bradlc.vscode-tailwindcss@0.14.29
 ms-python.python@2026.4.0
 ms-python.vscode-pylance@2026.2.1
 editorconfig.editorconfig@0.18.2
-ms-python.pylint@2026.4.0
 ms-vscode.cpptools@1.32.2
 ms-python.debugpy@2026.6.0
 ms-python.vscode-python-envs@1.30.0
 ms-vscode.live-server@0.4.19
-eamodio.gitlens@18.0.0
 ms-vscode-remote.remote-ssh@0.124.0
 ms-vscode-remote.remote-containers@0.459.1
 ms-python.black-formatter@2026.6.0
+eamodio.gitlens@18.1.0
+ms-python.pylint@2026.6.0
