@@ -20,7 +20,6 @@ caponetto.vscode-diff-viewer
 kaiwood.indentation-level-movement
 chunsen.bracket-select
 alefragnani.project-manager
-alefragnani.bookmarks
 
 # === Git ===
 eamodio.gitlens
