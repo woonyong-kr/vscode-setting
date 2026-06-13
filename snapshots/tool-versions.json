@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-13T10:53:16.112423+00:00",
+  "platform": {
+    "system": "Darwin",
+    "release": "25.3.0",
+    "machine": "arm64"
+  },
+  "shell": {
+    "default": "zsh",
+    "zsh": {
+      "available": true,
+      "command": "zsh",
+      "version": "zsh 5.9 (arm64-apple-darwin25.0)"
+    },
+    "bash": {
+      "available": true,
+      "command": "bash",
+      "version": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)"
+    },
+    "pwsh": {
+      "available": false
+    }
+  },
+  "tools": {
+    "code": {
+      "available": true,
+      "command": "code",
+      "version": "1.123.0"
+    },
+    "cursor": {
+      "available": false
+    },
+    "brew": {
+      "available": true,
+      "command": "brew",
+      "version": "Homebrew 5.1.15"
+    },
+    "node": {
+      "available": true,
+      "command": "node",
+      "version": "v22.19.0"
+    },
+    "npm": {
+      "available": true,
+      "command": "npm",
+      "version": "10.9.3"
+    },
+    "pnpm": {
+      "available": true,
+      "command": "pnpm",
+      "version": "10.17.0"
+    },
+    "bun": {
+      "available": false
+    },
+    "uv": {
+      "available": true,
+      "command": "uv",
+      "version": "uv 0.9.17 (2b5d65e61 2025-12-09)"
+    },
+    "python3": {
+      "available": true,
+      "command": "python3",
+      "version": "Python 3.9.6"
+    },
+    "pip3": {
+      "available": true,
+      "command": "pip3",
+      "version": "pip 25.3 (python 3.9)"
+    },
+    "git": {
+      "available": true,
+      "command": "git",
+      "version": "git version 2.50.1 (Apple Git-155)"
+    },
+    "docker": {
+      "available": true,
+      "command": "docker",
+      "version": "Docker version 29.4.0, build 9d7ad9f"
+    },
+    "gh": {
+      "available": true,
+      "command": "gh",
+      "version": "gh version 2.79.0 (2025-09-08)"
+    },
+    "direnv": {
+      "available": true,
+      "command": "direnv",
+      "version": "2.37.1"
+    },
+    "mise": {
+      "available": true,
+      "command": "mise",
+      "version": "2026.6.1 macos-arm64 (2026-06-06)"
+    },
+    "volta": {
+      "available": true,
+      "command": "volta",
+      "version": "2.0.2"
+    }
+  }
+}

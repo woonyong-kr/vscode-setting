@@ -2,12 +2,26 @@
 from pathlib import Path
 import json
 import shutil
+import os
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT_ROOT = REPO_ROOT / 'vscode-user'
-USER_DIR = Path.home() / 'Library/Application Support/Code/User'
 PROFILE_NAME = 'woonyong'
+
+
+def vscode_user_dir() -> Path:
+    if sys.platform == 'darwin':
+        return Path.home() / 'Library/Application Support/Code/User'
+    if sys.platform.startswith('win'):
+        appdata = os.environ.get('APPDATA')
+        if not appdata:
+            raise SystemExit('APPDATA is not set.')
+        return Path(appdata) / 'Code/User'
+    return Path.home() / '.config/Code/User'
+
+
+USER_DIR = vscode_user_dir()
 
 
 def find_profile_location() -> str:

@@ -23,7 +23,7 @@ cd $HOME\workspace\vscode-setting
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-스크립트가 기존 VS Code User 설정을 백업한 뒤 settings, keybindings, tasks, snippets, extensions를 복원합니다.
+스크립트가 기존 VS Code User 설정을 백업한 뒤 settings, keybindings, tasks, snippets, curated extensions를 복원합니다.
 
 프로필까지 더 가깝게 맞추려면 VS Code에서 `woonyong` 프로필을 만든 뒤 아래를 실행합니다.
 
@@ -45,10 +45,11 @@ vscode-setting/
 ├── install.ps1              ← 일괄 설치 스크립트 (Windows)
 ├── settings.json            ← VS Code 글로벌 settings.json
 ├── keybindings.json         ← IntelliJ 스타일 커스텀 단축키
-├── extensions.txt           ← 확장 프로그램 전체 목록 (카테고리별)
+├── extensions.txt           ← 기본 복원용 curated 확장 목록
 ├── pintos-clang-format      ← PintOS C 코딩 스타일 (.clang-format)
 ├── docs/
 │   └── environment-manager.md
+├── snapshots/               ← 개발 도구/패키지 매니저 상태 스냅샷
 ├── vscode-user/             ← VS Code User 디렉토리 백업
 │   ├── settings.json
 │   ├── keybindings.json
@@ -114,7 +115,7 @@ vscode-setting/
 
 ### Extensions
 
-`extensions.txt`에 카테고리별로 정리되어 있습니다. 주요 카테고리:
+`extensions.txt`는 새 머신 기본 복원용 curated 목록이고, 실제 이 머신에 설치된 전체 버전 스냅샷은 `vscode-user/extensions-global.txt`에 있습니다. 주요 curated 카테고리:
 
 - **Theme/UX**: One Dark Pro, JetBrains Icon Theme, IntelliJ Keybindings
 - **Editor Tools**: Code Runner, Error Lens, EditorConfig, Spell Checker, Rainbow CSV
@@ -126,8 +127,7 @@ vscode-setting/
 - **Markdown**: Markdown All in One, Preview GitHub Styles, Mermaid
 - **Remote/Container**: Remote SSH, Dev Containers, Docker
 - **Diagram**: Draw.io Integration
-- **AI**: Claude Code
-- **Jungle**: pintos-test-explorer
+- **AI**: Claude Code, OpenAI ChatGPT
 
 ### Remote/Container Auto-Apply
 
@@ -211,6 +211,14 @@ python3 scripts/export_from_vscode.py
 ```
 
 이 명령은 글로벌 settings/keybindings/tasks/snippets, `woonyong` 프로필 스냅샷, 설치된 extension snapshot을 저장소에 반영합니다.
+
+개발 도구와 패키지 매니저 상태까지 갱신하려면 아래도 함께 실행합니다.
+
+```bash
+python3 scripts/export_environment_snapshot.py
+```
+
+이 명령은 `snapshots/tool-versions.json`, `snapshots/homebrew-formulae.txt`, `snapshots/homebrew-casks.txt`, `snapshots/npm-global-packages.txt`를 갱신합니다.
 
 ### 다른 컴퓨터에 적용
 

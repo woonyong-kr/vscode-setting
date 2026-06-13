@@ -3,11 +3,26 @@ from pathlib import Path
 import json
 import shutil
 import subprocess
+import sys
+import os
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOT_ROOT = REPO_ROOT / "vscode-user"
-USER_DIR = Path.home() / "Library/Application Support/Code/User"
 PROFILE_NAME = "woonyong"
+
+
+def vscode_user_dir() -> Path:
+    if sys.platform == "darwin":
+        return Path.home() / "Library/Application Support/Code/User"
+    if sys.platform.startswith("win"):
+        appdata = os.environ.get("APPDATA")
+        if not appdata:
+            raise SystemExit("APPDATA is not set.")
+        return Path(appdata) / "Code/User"
+    return Path.home() / ".config/Code/User"
+
+
+USER_DIR = vscode_user_dir()
 
 
 def find_profile_location() -> str:
@@ -30,6 +45,17 @@ def mirror(src: Path, dst: Path) -> None:
     shutil.copy2(src, dst)
 
 
+def sync_optional(src: Path, dst: Path) -> None:
+    if src.exists():
+        mirror(src, dst)
+        return
+
+    if dst.is_dir():
+        shutil.rmtree(dst)
+    elif dst.exists():
+        dst.unlink()
+
+
 def write_lines(path: Path, lines: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     content = "\n".join(lines)
@@ -44,11 +70,11 @@ repo_profile = SNAPSHOT_ROOT / "profiles" / PROFILE_NAME
 
 mirror(USER_DIR / "settings.json", SNAPSHOT_ROOT / "settings.json")
 mirror(USER_DIR / "keybindings.json", SNAPSHOT_ROOT / "keybindings.json")
-mirror(USER_DIR / "tasks.json", SNAPSHOT_ROOT / "tasks.json")
-mirror(USER_DIR / "snippets", SNAPSHOT_ROOT / "snippets")
+sync_optional(USER_DIR / "tasks.json", SNAPSHOT_ROOT / "tasks.json")
+sync_optional(USER_DIR / "snippets", SNAPSHOT_ROOT / "snippets")
 mirror(profile_dir / "settings.json", repo_profile / "settings.json")
-mirror(profile_dir / "tasks.json", repo_profile / "tasks.json")
-mirror(profile_dir / "snippets", repo_profile / "snippets")
+sync_optional(profile_dir / "tasks.json", repo_profile / "tasks.json")
+sync_optional(profile_dir / "snippets", repo_profile / "snippets")
 mirror(USER_DIR / "settings.json", REPO_ROOT / "settings.json")
 mirror(USER_DIR / "keybindings.json", REPO_ROOT / "keybindings.json")
 

@@ -66,6 +66,7 @@ ms-azuretools.vscode-containers
 
 # === AI ===
 anthropic.claude-code
+openai.chatgpt
 
 # === 다이어그램 ===
 hediet.vscode-drawio
@@ -73,6 +74,3 @@ hediet.vscode-drawio
 # === 기타 ===
 ms-vscode.live-server
 zhucy.project-tree
-
-# === Jungle ===
-yoojinkoh.pintos-test-explorer
