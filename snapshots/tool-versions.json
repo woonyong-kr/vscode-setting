@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T10:53:16.112423+00:00",
+  "generated_at": "2026-06-16T10:51:10.532523+00:00",
   "platform": {
     "system": "Darwin",
     "release": "25.3.0",
@@ -61,12 +61,12 @@
     "python3": {
       "available": true,
       "command": "python3",
-      "version": "Python 3.9.6"
+      "version": "Python 3.13.13"
     },
     "pip3": {
       "available": true,
       "command": "pip3",
-      "version": "pip 25.3 (python 3.9)"
+      "version": "pip 26.1.1 (python 3.13)"
     },
     "git": {
       "available": true,
