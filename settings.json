@@ -17,6 +17,10 @@
     "python": true
   },
   "makefile.configureOnOpen": true,
+  "workbench.editorAssociations": {
+    "*.md": "cweijan.markdownViewer.optional",
+    "*.markdown": "cweijan.markdownViewer.optional"
+  },
   "markdown.extension.preview.autoShowPreviewToSide": false,
   "markdown.preview.scrollPreviewWithEditor": true,
   "markdown.preview.scrollEditorWithPreview": true,
