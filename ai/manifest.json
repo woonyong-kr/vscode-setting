@@ -1,0 +1,96 @@
+{
+  "repo_name": "ide-setting",
+  "purpose": "Reproduce Woonyong's development environment anywhere through AI agents such as Claude and Codex.",
+  "audience": [
+    "Claude",
+    "Codex",
+    "human operators"
+  ],
+  "platforms": {
+    "supported": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "primary": [
+      "macOS",
+      "Windows"
+    ]
+  },
+  "ides": {
+    "canonical_editor": "VS Code",
+    "supported": [
+      "VS Code",
+      "Cursor",
+      "PyCharm",
+      "IntelliJ IDEA"
+    ],
+    "policy": "Use VS Code behavior and keymap intent as canonical, then map that intent to other IDEs."
+  },
+  "canonical_sources": {
+    "vscode_settings": "settings.json",
+    "vscode_keybindings": "keybindings.json",
+    "vscode_snapshot": "vscode-user/",
+    "jetbrains_keymap": "jetbrains/Codex VSCode.xml",
+    "keymap_policy": "docs/ide-keymap-policy.md",
+    "environment_policy": "docs/environment-manager.md",
+    "platform_matrix": "docs/platform-support-matrix.md",
+    "python_convention": "docs/conventions/python-google.md"
+  },
+  "agent_entrypoints": [
+    "AGENTS.md",
+    "CLAUDE.md"
+  ],
+  "apply_scripts": {
+    "vscode": "scripts/apply_to_vscode.py",
+    "jetbrains_all": "scripts/apply_to_jetbrains.py",
+    "pycharm_only": "scripts/apply_to_pycharm.py",
+    "snapshot_export": "scripts/export_environment_snapshot.py",
+    "manifest_validate": "scripts/validate_ai_manifest.py"
+  },
+  "installers": {
+    "macos_linux": "install.sh",
+    "windows": "install.ps1"
+  },
+  "keymap": {
+    "profile": "macOS-safe",
+    "os_shortcuts_policy": "Do not change OS shortcuts. Resolve conflicts in IDE keymaps.",
+    "shared_intents": [
+      "navigate_back",
+      "navigate_forward",
+      "previous_tab",
+      "next_tab",
+      "close_tab",
+      "close_all_tabs",
+      "debug_start_or_continue",
+      "debug_stop",
+      "debug_step_out",
+      "toggle_breakpoint",
+      "selection_to_watch",
+      "goto_symbol",
+      "find_usages",
+      "toggle_bookmark",
+      "show_bookmarks",
+      "previous_bookmark",
+      "next_bookmark"
+    ]
+  },
+  "safety": {
+    "do_not_commit": [
+      "tokens",
+      "passwords",
+      "ssh_keys",
+      "login_sessions",
+      "machine_specific_caches",
+      "nonessential_absolute_paths"
+    ],
+    "preserve_user_changes": true
+  },
+  "preferred_workflow": [
+    "Read manifest and agent guide.",
+    "Inspect canonical VS Code files first.",
+    "Apply VS Code snapshot or JetBrains keymap depending on target IDE.",
+    "Update docs and machine-readable manifest together when policy changes.",
+    "Run validation scripts before commit."
+  ]
+}

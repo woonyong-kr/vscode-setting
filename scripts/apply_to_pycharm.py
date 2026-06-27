@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 from pathlib import Path
 import shutil
-import sys
+
+from jetbrains_paths import active_keymap_paths, jetbrains_root
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 KEYMAP_NAME = "Codex VSCode"
 SOURCE_KEYMAP = REPO_ROOT / "jetbrains" / f"{KEYMAP_NAME}.xml"
-JETBRAINS_ROOT = Path.home() / "Library/Application Support/JetBrains"
+JETBRAINS_ROOT = jetbrains_root()
 
 
 def latest_pycharm_dir() -> Path:
@@ -20,26 +23,23 @@ def latest_pycharm_dir() -> Path:
 
 
 def main() -> None:
-    if sys.platform != "darwin":
-        raise SystemExit("This helper currently supports macOS only.")
-
     config_dir = latest_pycharm_dir()
     keymaps_dir = config_dir / "keymaps"
-    options_dir = config_dir / "options" / "mac"
     target_keymap = keymaps_dir / SOURCE_KEYMAP.name
-    target_active = options_dir / "keymap.xml"
 
     keymaps_dir.mkdir(parents=True, exist_ok=True)
-    options_dir.mkdir(parents=True, exist_ok=True)
-
     shutil.copy2(SOURCE_KEYMAP, target_keymap)
-    target_active.write_text(
+    active_xml = (
         "<application>\n"
         "  <component name=\"KeymapManager\">\n"
         f"    <active_keymap name=\"{KEYMAP_NAME}\" />\n"
         "  </component>\n"
         "</application>\n"
     )
+
+    for target_active in active_keymap_paths(config_dir):
+        target_active.parent.mkdir(parents=True, exist_ok=True)
+        target_active.write_text(active_xml)
 
     print(f"Applied '{KEYMAP_NAME}' to {config_dir.name}.")
     print("Restart PyCharm to reload the active keymap.")

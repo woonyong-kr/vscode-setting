@@ -1,8 +1,16 @@
-# Development Environment Settings
+# IDE Environment Settings
 
-여러 IDE를 오가더라도 동일한 개발 경험을 재현하기 위한 환경 저장소입니다.
-핵심 원칙은 VS Code를 canonical source로 두고, PyCharm/IntelliJ/Cursor 같은 다른 IDE가 그 동작을 최대한 따라오게 만드는 것입니다.
-현재 공통 단축키는 macOS 시스템 단축키를 건드리지 않아도 되는 `macOS-safe` 프로필을 기준으로 합니다.
+이 저장소는 "내 개발 환경을 어디서든 Claude나 Codex로 재현하기 위한 레포" 입니다.
+VS Code를 canonical source로 두고, Cursor, PyCharm, IntelliJ IDEA, macOS, Windows까지 함께 고려합니다.
+현재 공통 단축키는 OS 시스템 단축키를 건드리지 않아도 되는 `macOS-safe` canonical profile을 기준으로 합니다.
+
+## Start Here
+
+- 사람: [docs/environment-manager.md](docs/environment-manager.md)
+- AI: [ai/manifest.json](ai/manifest.json), [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md)
+- 플랫폼/IDE 범위: [docs/platform-support-matrix.md](docs/platform-support-matrix.md)
+- 키맵 정책: [docs/ide-keymap-policy.md](docs/ide-keymap-policy.md)
+- Python 컨벤션: [docs/conventions/python-google.md](docs/conventions/python-google.md)
 
 ---
 
@@ -40,7 +48,7 @@ python3 scripts/apply_to_jetbrains.py
 ```
 
 운영 원칙과 재현 범위는 [Environment Manager](docs/environment-manager.md)에 정리되어 있습니다.
-단축키 유지 규칙은 [IDE Keymap Policy](docs/ide-keymap-policy.md), Python 컨벤션은 [Python Conventions](docs/conventions/python-google.md)에 정리되어 있습니다.
+단축키 유지 규칙은 [IDE Keymap Policy](docs/ide-keymap-policy.md), 플랫폼/IDE 지원 범위는 [Platform Support Matrix](docs/platform-support-matrix.md), Python 컨벤션은 [Python Conventions](docs/conventions/python-google.md)에 정리되어 있습니다.
 
 ---
 
@@ -49,7 +57,11 @@ python3 scripts/apply_to_jetbrains.py
 ```
 ide-setting/
 ├── AGENTS.md                ← AI/자동화용 환경 적용 규칙
+├── CLAUDE.md                ← Claude용 빠른 진입점
 ├── README.md                ← 이 문서
+├── ai/
+│   ├── README.md
+│   └── manifest.json        ← AI용 machine-readable source of truth
 ├── install.sh               ← 일괄 설치 스크립트 (macOS/Linux)
 ├── install.ps1              ← 일괄 설치 스크립트 (Windows)
 ├── settings.json            ← VS Code 글로벌 settings.json
@@ -58,8 +70,9 @@ ide-setting/
 ├── jetbrains/               ← JetBrains 계열 공통 keymap source
 ├── pintos-clang-format      ← PintOS C 코딩 스타일 (.clang-format)
 ├── docs/
-│   └── environment-manager.md
+│   ├── environment-manager.md
 │   ├── ide-keymap-policy.md
+│   ├── platform-support-matrix.md
 │   └── conventions/python-google.md
 ├── snapshots/               ← 개발 도구/패키지 매니저 상태 스냅샷
 ├── vscode-user/             ← VS Code User 디렉토리 백업
@@ -72,7 +85,8 @@ ide-setting/
     ├── apply_to_pycharm.py
     ├── apply_to_vscode.py
     ├── export_from_vscode.py
-    └── install_extensions.py
+    ├── install_extensions.py
+    └── validate_ai_manifest.py
 ```
 
 ---
@@ -94,7 +108,7 @@ ide-setting/
 | Line Highlight | All |
 | Word Wrap | OFF |
 
-### Custom Keybindings (IntelliJ Style)
+### Custom Keybindings (Canonical Cross-IDE)
 
 VS Code의 `keybindings.json` 을 canonical source로 사용합니다. 다른 IDE는 이 키와 사용자 의도를 따라오게 맞춥니다.
 
