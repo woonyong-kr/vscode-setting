@@ -1,7 +1,8 @@
-# VS Code Global Settings
+# Development Environment Settings
 
-어떤 컴퓨터/환경에서든 동일한 VS Code 환경을 복원하기 위한 설정 백업입니다.
-IntelliJ에서 넘어온 개발자를 위한 세팅으로, One Dark Pro 테마 + JetBrains Mono 폰트 + IntelliJ 키맵을 기본으로 합니다.
+여러 IDE를 오가더라도 동일한 개발 경험을 재현하기 위한 환경 저장소입니다.
+핵심 원칙은 VS Code를 canonical source로 두고, PyCharm/IntelliJ/Cursor 같은 다른 IDE가 그 동작을 최대한 따라오게 만드는 것입니다.
+현재 공통 단축키는 macOS 시스템 단축키를 건드리지 않아도 되는 `macOS-safe` 프로필을 기준으로 합니다.
 
 ---
 
@@ -32,7 +33,14 @@ python3 scripts/apply_to_vscode.py
 python3 scripts/install_extensions.py
 ```
 
+JetBrains 계열 IDE에서는 아래 명령으로 공통 키맵을 일괄 적용합니다.
+
+```bash
+python3 scripts/apply_to_jetbrains.py
+```
+
 운영 원칙과 재현 범위는 [Environment Manager](docs/environment-manager.md)에 정리되어 있습니다.
+단축키 유지 규칙은 [IDE Keymap Policy](docs/ide-keymap-policy.md), Python 컨벤션은 [Python Conventions](docs/conventions/python-google.md)에 정리되어 있습니다.
 
 ---
 
@@ -40,15 +48,19 @@ python3 scripts/install_extensions.py
 
 ```
 vscode-setting/
+├── AGENTS.md                ← AI/자동화용 환경 적용 규칙
 ├── README.md                ← 이 문서
 ├── install.sh               ← 일괄 설치 스크립트 (macOS/Linux)
 ├── install.ps1              ← 일괄 설치 스크립트 (Windows)
 ├── settings.json            ← VS Code 글로벌 settings.json
-├── keybindings.json         ← IntelliJ 스타일 커스텀 단축키
+├── keybindings.json         ← canonical VS Code 단축키 기준
 ├── extensions.txt           ← 기본 복원용 curated 확장 목록
+├── jetbrains/               ← JetBrains 계열 공통 keymap source
 ├── pintos-clang-format      ← PintOS C 코딩 스타일 (.clang-format)
 ├── docs/
 │   └── environment-manager.md
+│   ├── ide-keymap-policy.md
+│   └── conventions/python-google.md
 ├── snapshots/               ← 개발 도구/패키지 매니저 상태 스냅샷
 ├── vscode-user/             ← VS Code User 디렉토리 백업
 │   ├── settings.json
@@ -56,6 +68,8 @@ vscode-setting/
 │   ├── snippets/            ← 언어별 코드 스니펫
 │   └── profiles/woonyong/   ← 프로필별 설정/스니펫
 └── scripts/
+    ├── apply_to_jetbrains.py
+    ├── apply_to_pycharm.py
     ├── apply_to_vscode.py
     ├── export_from_vscode.py
     └── install_extensions.py
@@ -82,24 +96,33 @@ vscode-setting/
 
 ### Custom Keybindings (IntelliJ Style)
 
-기본적으로 `k--kato.intellij-idea-keybindings` 익스텐션이 IntelliJ 키맵을 제공하며, 아래는 추가 커스텀 오버라이드입니다.
+VS Code의 `keybindings.json` 을 canonical source로 사용합니다. 다른 IDE는 이 키와 사용자 의도를 따라오게 맞춥니다.
 
 | 단축키 | 기능 | 카테고리 |
 |--------|------|----------|
-| `Cmd+[` | Navigate Back | Navigation |
-| `Cmd+]` | Navigate Forward | Navigation |
-| `Cmd+Shift+[` | Previous Tab | Tab |
-| `Cmd+Shift+]` | Next Tab | Tab |
+| `Ctrl+-` | Navigate Back | Navigation |
+| `Ctrl+Shift+-` | Navigate Forward | Navigation |
+| `Ctrl+Alt+Left` | Previous Tab | Tab |
+| `Ctrl+Alt+Right` | Next Tab | Tab |
 | `Alt+Q` | Close Active Tab | Tab |
 | `Shift+Alt+Q` | Close All Tabs | Tab |
-| `F5` | Start / Continue Debug | Debug |
-| `Shift+F5` | Stop Debug | Debug |
-| `F6` | Step Out | Debug |
-| `F9` | Toggle Breakpoint | Debug |
-| `Shift+F9` | Selection to Watch | Debug |
-| `Cmd+F11` | Go to Symbol (All) | Search |
+| `Ctrl+Alt+Shift+R` | Start / Continue Debug | Debug |
+| `Ctrl+Alt+Shift+S` | Stop Debug | Debug |
+| `Ctrl+Alt+Shift+O` | Step Out | Debug |
+| `Ctrl+Alt+Shift+B` | Toggle Breakpoint | Debug |
+| `Ctrl+Alt+Shift+W` | Selection to Watch | Debug |
+| `Cmd+T` | Go to Symbol (All) | Search |
+| `Ctrl+Alt+F7` | Find References / Find Usages | Search |
 | `Ctrl+Up/Down` | 인덴트 단위 커서 이동 | Navigation |
 | `Alt+A` | 괄호 안 내용 선택 | Selection |
+
+JetBrains 계열 IDE는 `jetbrains/Codex VSCode.xml` 로 같은 단축키를 따라오게 합니다.
+
+충돌 처리 원칙:
+
+- canonical keyset은 저장소에서 관리합니다.
+- macOS와 충돌하면 OS를 바꾸지 않고 IDE keymap을 재설계합니다.
+- 완전 동일 키가 불가능하면 fallback 키를 canonical로 승격하고 문서에 명시합니다.
 
 ### Language-specific Formatters
 
@@ -112,6 +135,14 @@ vscode-setting/
 | JSON / JSONC | Prettier | 2 | Space |
 
 공통 설정: `formatOnSave: true`, `formatOnPaste: true`, `formatOnType: true`, `trimTrailingWhitespace: true`, `insertFinalNewline: true`
+
+### Python Convention
+
+Python 코드는 Google Python Style Guide를 기준으로 합니다.
+
+- formatter: `black`
+- linter: `pylint`
+- naming/docstring/import 정책: [Python Conventions](docs/conventions/python-google.md) 참고
 
 ### Extensions
 
@@ -219,6 +250,12 @@ python3 scripts/export_environment_snapshot.py
 ```
 
 이 명령은 `snapshots/tool-versions.json`, `snapshots/homebrew-formulae.txt`, `snapshots/homebrew-casks.txt`, `snapshots/npm-global-packages.txt`를 갱신합니다.
+
+JetBrains 계열 IDE keymap을 다시 적용하려면:
+
+```bash
+python3 scripts/apply_to_jetbrains.py
+```
 
 ### 다른 컴퓨터에 적용
 

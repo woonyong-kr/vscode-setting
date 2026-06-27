@@ -1,0 +1,138 @@
+<keymap version="1" name="Codex VSCode" parent="Mac OS X">
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta open_bracket" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta close_bracket" remove="true" />
+    <keyboard-shortcut first-keystroke="shift ctrl minus" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="meta alt left" remove="true" />
+    <keyboard-shortcut first-keystroke="shift meta open_bracket" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt left" />
+  </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="meta alt right" remove="true" />
+    <keyboard-shortcut first-keystroke="shift meta close_bracket" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt right" />
+  </action>
+  <action id="CloseAllEditors">
+    <keyboard-shortcut first-keystroke="meta k" second-keystroke="meta w" />
+    <keyboard-shortcut first-keystroke="shift alt q" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="meta w" />
+    <keyboard-shortcut first-keystroke="alt q" />
+  </action>
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="ctrl alt shift r" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f9" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt shift r" />
+  </action>
+  <action id="Stop">
+    <keyboard-shortcut first-keystroke="ctrl alt shift s" />
+  </action>
+  <action id="StepOut">
+    <keyboard-shortcut first-keystroke="f6" remove="true" />
+    <keyboard-shortcut first-keystroke="shift f8" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt shift o" />
+  </action>
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="meta f8" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt shift b" />
+  </action>
+  <action id="XDebugger.AddToWatches">
+    <keyboard-shortcut first-keystroke="ctrl alt shift w" />
+  </action>
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="meta f11" remove="true" />
+    <keyboard-shortcut first-keystroke="meta t" />
+  </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt f7" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt f7" />
+  </action>
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="alt f9" remove="true" />
+    <keyboard-shortcut first-keystroke="ctrl alt m" />
+  </action>
+  <action id="ShowBookmarks">
+    <keyboard-shortcut first-keystroke="ctrl alt shift m" />
+  </action>
+  <action id="GotoNextBookmark">
+    <keyboard-shortcut first-keystroke="alt close_bracket" />
+  </action>
+  <action id="GotoPreviousBookmark">
+    <keyboard-shortcut first-keystroke="alt open_bracket" />
+  </action>
+
+  <action id="PreviousDiff">
+    <keyboard-shortcut first-keystroke="meta open_bracket" remove="true" />
+  </action>
+  <action id="NextDiff">
+    <keyboard-shortcut first-keystroke="meta close_bracket" remove="true" />
+  </action>
+  <action id="ToggleBookmarkWithMnemonic">
+    <keyboard-shortcut first-keystroke="meta f11" remove="true" />
+  </action>
+  <action id="RunToCursor">
+    <keyboard-shortcut first-keystroke="alt f9" remove="true" />
+  </action>
+  <action id="CopyElement">
+    <keyboard-shortcut first-keystroke="f5" remove="true" />
+  </action>
+  <action id="Move">
+    <keyboard-shortcut first-keystroke="f6" remove="true" />
+  </action>
+
+  <action id="ShowProjectStructureSettings">
+    <keyboard-shortcut first-keystroke="meta semicolon" remove="true" />
+  </action>
+  <action id="FileChooser.GoToParent">
+    <keyboard-shortcut first-keystroke="meta up" remove="true" />
+  </action>
+  <action id="EditorScrollUp">
+    <keyboard-shortcut first-keystroke="meta up" remove="true" />
+  </action>
+  <action id="EditorScrollDown">
+    <keyboard-shortcut first-keystroke="meta down" remove="true" />
+  </action>
+  <action id="ContextHelp">
+    <keyboard-shortcut first-keystroke="f1" remove="true" />
+  </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="control enter" remove="true" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="control enter" remove="true" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" remove="true" />
+  </action>
+  <action id="CommentByBlockComment">
+    <keyboard-shortcut first-keystroke="control shift slash" remove="true" />
+    <keyboard-shortcut first-keystroke="control shift divide" remove="true" />
+  </action>
+  <action id="Vcs.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="ctrl v" remove="true" />
+  </action>
+  <action id="GotoNextElementUnderCaretUsage">
+    <keyboard-shortcut first-keystroke="ctrl alt down" remove="true" />
+  </action>
+  <action id="GotoPrevElementUnderCaretUsage">
+    <keyboard-shortcut first-keystroke="ctrl alt up" remove="true" />
+  </action>
+  <action id="SearchEverywhere.NavigateToNextGroup">
+    <keyboard-shortcut first-keystroke="page_down" remove="true" />
+    <keyboard-shortcut first-keystroke="meta down" remove="true" />
+  </action>
+  <action id="SearchEverywhere.NavigateToPrevGroup">
+    <keyboard-shortcut first-keystroke="meta up" remove="true" />
+  </action>
+  <action id="ShowSearchHistory">
+    <keyboard-shortcut first-keystroke="alt down" remove="true" />
+  </action>
+</keymap>

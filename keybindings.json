@@ -1,21 +1,21 @@
 [
     // ── Navigation (이전/다음 화면) ──
     {
-        "key": "cmd+[",
+        "key": "ctrl+-",
         "command": "workbench.action.navigateBack"
     },
     {
-        "key": "cmd+]",
+        "key": "ctrl+shift+-",
         "command": "workbench.action.navigateForward"
     },
 
     // ── Tab Switching (탭 이동) ──
     {
-        "key": "cmd+shift+[",
+        "key": "ctrl+alt+left",
         "command": "workbench.action.previousEditor"
     },
     {
-        "key": "cmd+shift+]",
+        "key": "ctrl+alt+right",
         "command": "workbench.action.nextEditor"
     },
 
@@ -31,60 +31,67 @@
 
     // ── Debug (디버그) ──
     {
-        "key": "f5",
+        "key": "ctrl+alt+shift+r",
         "command": "workbench.action.debug.start",
         "when": "!inDebugMode"
     },
     {
-        "key": "f5",
+        "key": "ctrl+alt+shift+r",
         "command": "workbench.action.debug.continue",
         "when": "inDebugMode"
     },
     {
-        "key": "shift+f5",
+        "key": "ctrl+alt+shift+s",
         "command": "workbench.action.debug.stop",
         "when": "inDebugMode"
     },
     {
-        "key": "f6",
+        "key": "ctrl+alt+shift+o",
         "command": "workbench.action.debug.stepOut",
         "when": "inDebugMode"
     },
     {
-        "key": "f9",
+        "key": "ctrl+alt+shift+b",
         "command": "editor.debug.action.toggleBreakpoint"
     },
     {
-        "key": "shift+f9",
+        "key": "ctrl+alt+shift+w",
         "command": "editor.debug.action.selectionToWatch"
     },
     // IntelliJ 충돌 해제
     {
-        "key": "f9",
+        "key": "ctrl+alt+shift+b",
         "command": "-workbench.action.debug.continue"
     },
     {
-        "key": "f6",
+        "key": "ctrl+alt+shift+o",
         "command": "-editor.action.changeAll"
     },
     {
-        "key": "shift+f9",
+        "key": "ctrl+alt+shift+w",
         "command": "-workbench.action.debug.start"
     },
 
     // ── Symbol Search (심볼 검색) ──
     {
-        "key": "cmd+f11",
+        "key": "cmd+t",
         "command": "workbench.action.showAllSymbols"
+    },
+
+    // ── References / Usages (참조 검색) ──
+    {
+        "key": "ctrl+alt+f7",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
     },
 
     // ── Bookmarks (북마크) ──
     {
-        "key": "alt+f9",
+        "key": "ctrl+alt+m",
         "command": "bookmarks.toggle"
     },
     {
-        "key": "cmd+f10",
+        "key": "ctrl+alt+shift+m",
         "command": "bookmarks.listFromAllFiles"
     },
     {
