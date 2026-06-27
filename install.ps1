@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $UserDir = Join-Path $env:APPDATA "Code\User"
 
-Write-Host "VS Code global settings installer for Windows"
+Write-Host "IDE settings installer for Windows"
 Write-Host ""
 
 function Backup-Path {

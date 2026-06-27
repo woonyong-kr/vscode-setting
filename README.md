@@ -11,16 +11,16 @@
 ### macOS / Linux
 
 ```bash
-git clone <이 레포 URL> ~/workspace/vscode-setting
-cd ~/workspace/vscode-setting
+git clone <이 레포 URL> ~/workspace/ide-setting
+cd ~/workspace/ide-setting
 bash install.sh
 ```
 
 ### Windows
 
 ```powershell
-git clone <이 레포 URL> $HOME\workspace\vscode-setting
-cd $HOME\workspace\vscode-setting
+git clone <이 레포 URL> $HOME\workspace\ide-setting
+cd $HOME\workspace\ide-setting
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
@@ -47,7 +47,7 @@ python3 scripts/apply_to_jetbrains.py
 ## File Structure
 
 ```
-vscode-setting/
+ide-setting/
 ├── AGENTS.md                ← AI/자동화용 환경 적용 규칙
 ├── README.md                ← 이 문서
 ├── install.sh               ← 일괄 설치 스크립트 (macOS/Linux)
@@ -184,7 +184,7 @@ Cursor를 쓰는 경우 `cursor` CLI와 확장 설치 상태를 별도로 확인
 ### 적용 방법
 
 ```bash
-cp ~/workspace/vscode-setting/pintos-clang-format <프로젝트경로>/.clang-format
+cp ~/workspace/ide-setting/pintos-clang-format <프로젝트경로>/.clang-format
 ```
 
 ### 규칙 상세
@@ -262,16 +262,16 @@ python3 scripts/apply_to_jetbrains.py
 macOS/Linux:
 
 ```bash
-git clone <레포URL> ~/workspace/vscode-setting
-cd ~/workspace/vscode-setting
+git clone <레포URL> ~/workspace/ide-setting
+cd ~/workspace/ide-setting
 bash install.sh
 ```
 
 Windows:
 
 ```powershell
-git clone <레포URL> $HOME\workspace\vscode-setting
-cd $HOME\workspace\vscode-setting
+git clone <레포URL> $HOME\workspace\ide-setting
+cd $HOME\workspace\ide-setting
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
@@ -286,7 +286,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 모든 세팅(테마, 키바인딩, 익스텐션, 포맷터, 폰트)을 한번에 적용합니다.
 
 ````
-내 VS Code를 아래 세팅으로 전체 설정해줘. OS는 [macOS/Linux/Windows] 이야.
+내 IDE 환경을 아래 세팅으로 전체 설정해줘. 기준 저장소는 ide-setting 이고, OS는 [macOS/Linux/Windows] 이야.
 
 1. 테마/외관:
    - Color Theme: One Dark Pro (zhuangtongfa.material-theme)
@@ -295,17 +295,22 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
    - minimap OFF, bracketPairColorization ON, stickyScroll ON
    - cursorSmoothCaretAnimation ON, renderLineHighlight "all", wordWrap OFF
 
-2. 키바인딩 (IntelliJ 스타일):
-   - 기본: IntelliJ IDEA Keybindings 익스텐션 (k--kato.intellij-idea-keybindings)
-   - 커스텀 오버라이드 (keybindings.json에 추가):
-     - Cmd+[ / Cmd+] → Navigate Back/Forward
-     - Cmd+Shift+[ / Cmd+Shift+] → Previous/Next Tab
-     - Alt+Q → Close Tab, Shift+Alt+Q → Close All Tabs
-     - F5 → Start/Continue Debug, Shift+F5 → Stop
-     - F6 → Step Out, F9 → Toggle Breakpoint, Shift+F9 → Watch
-     - Cmd+F11 → Go to Symbol
-     - Ctrl+Up/Down → 인덴트 단위 커서 이동 (Indentation Level Movement)
-     - Alt+A → 괄호 안 내용 선택 (Bracket Select)
+2. 키바인딩 (macOS-safe canonical):
+   - VS Code keybindings.json을 canonical source로 사용
+   - 커스텀 오버라이드:
+     - Ctrl+- / Ctrl+Shift+- → Navigate Back/Forward
+     - Ctrl+Alt+Left / Ctrl+Alt+Right → Previous/Next Tab
+     - Alt+Q / Shift+Alt+Q → Close Tab / Close All Tabs
+     - Ctrl+Alt+Shift+R → Start/Continue Debug
+     - Ctrl+Alt+Shift+S → Stop Debug
+     - Ctrl+Alt+Shift+O → Step Out
+     - Ctrl+Alt+Shift+B → Toggle Breakpoint
+     - Ctrl+Alt+Shift+W → Add Selection to Watch
+     - Cmd+T → Go to Symbol
+     - Ctrl+Alt+F7 → Find References / Find Usages
+     - Ctrl+Alt+M / Ctrl+Alt+Shift+M → Toggle Bookmark / Show Bookmarks
+     - Alt+[ / Alt+] → Previous / Next Bookmark
+   - macOS 시스템 단축키는 수정하지 말고 IDE keymap에서 충돌을 해결
 
 3. 포맷터:
    - formatOnSave: true, formatOnPaste: true, formatOnType: true
@@ -340,6 +345,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
    - Windows: https://www.jetbrains.com/lp/mono/ 에서 다운로드 후 설치
 
 위 내용을 settings.json, keybindings.json에 반영하고 확장 프로그램을 설치해줘.
+JetBrains IDE가 있으면 jetbrains/Codex VSCode.xml 기준으로 같은 의도의 키맵도 함께 맞춰줘.
 ````
 
 ### Prompt 2: Selective Setup (선택적 설치)
@@ -347,7 +353,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 아래 프롬프트에서 필요한 항목만 골라서 사용합니다. `[적용]` / `[제외]` 표시를 변경하세요.
 
 ````
-내 VS Code를 아래에서 선택한 항목만 설정해줘. OS는 [macOS/Linux/Windows] 이야.
+내 IDE 환경을 아래에서 선택한 항목만 설정해줘. 기준 저장소는 ide-setting 이고, OS는 [macOS/Linux/Windows] 이야.
 [적용] 또는 [제외]로 표시된 항목을 확인하고, [적용]인 것만 반영해줘.
 
 ## 테마/외관
@@ -357,8 +363,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 [적용] minimap OFF, bracketPairColorization ON, stickyScroll ON
 
 ## 키바인딩
-[적용] IntelliJ IDEA Keybindings 익스텐션
-[적용] 커스텀 단축키 (Navigate, Tab, Debug, Selection)
+[적용] canonical keybindings.json 기준 커스텀 단축키
+[적용] macOS 시스템 단축키를 바꾸지 않는 JetBrains override
 
 ## 포맷터
 [적용] formatOnSave + trimTrailingWhitespace + insertFinalNewline
@@ -392,6 +398,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 [적용]으로 표시된 항목만 settings.json, keybindings.json에 반영하고
 해당 확장 프로그램을 설치해줘.
+JetBrains IDE가 있으면 jetbrains/Codex VSCode.xml 기준 keymap도 같이 맞춰줘.
 ````
 
 ---
