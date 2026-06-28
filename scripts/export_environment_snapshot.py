@@ -82,6 +82,7 @@ def main() -> None:
             "pnpm": capture(["pnpm", "--version"]),
             "bun": capture(["bun", "--version"]),
             "uv": capture(["uv", "--version"]),
+            "ruff": capture(["ruff", "--version"]),
             "python3": capture(["python3", "--version"]),
             "pip3": capture(["pip3", "--version"]),
             "git": capture(["git", "--version"]),

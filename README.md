@@ -143,7 +143,7 @@ JetBrains 계열 IDE는 `jetbrains/Codex VSCode.xml` 로 같은 단축키를 따
 | Language | Formatter | Tab Size | Indent |
 |----------|-----------|----------|--------|
 | C / C++ | clang-format (file) | 4 | Tab |
-| Python | Black | 4 | Space |
+| Python | Ruff | 4 | Space |
 | JS / TS / JSX / TSX | Prettier | 2 | Space |
 | HTML / CSS / SCSS | Prettier | 2 | Space |
 | JSON / JSONC | Prettier | 2 | Space |
@@ -154,8 +154,8 @@ JetBrains 계열 IDE는 `jetbrains/Codex VSCode.xml` 로 같은 단축키를 따
 
 Python 코드는 Google Python Style Guide를 기준으로 합니다.
 
-- formatter: `black`
-- linter: `pylint`
+- formatter/linter: `ruff`
+- Python 전역 환경에서는 줄 길이 제한으로 인한 자동 줄바꿈을 강제하지 않음
 - naming/docstring/import 정책: [Python Conventions](docs/conventions/python-google.md) 참고
 
 ### Extensions
@@ -167,7 +167,7 @@ Python 코드는 Google Python Style Guide를 기준으로 합니다.
 - **Navigation/Selection**: Indentation Level Movement, Bracket Select, Project Manager
 - **Git**: GitLens, Git Graph, GitHub Actions
 - **C/C++**: cpptools, CMake, Makefile Tools
-- **Python**: Python, Pylance, Black, Pylint, debugpy
+- **Python**: Python, Pylance, Ruff, debugpy
 - **Web**: Prettier, ESLint, Tailwind CSS, Astro
 - **Markdown**: Markdown All in One, Preview GitHub Styles, Mermaid
 - **Remote/Container**: Remote SSH, Dev Containers, Docker
@@ -342,7 +342,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
    alefragnani.project-manager, eamodio.gitlens, mhutchie.git-graph,
    ms-vscode.cpptools, ms-vscode.cpptools-extension-pack,
    ms-vscode.makefile-tools, ms-python.python, ms-python.vscode-pylance,
-   ms-python.black-formatter, ms-python.pylint, esbenp.prettier-vscode,
+   charliermarsh.ruff, esbenp.prettier-vscode,
    dbaeumer.vscode-eslint, yzhang.markdown-all-in-one,
    bierner.markdown-preview-github-styles, bierner.markdown-mermaid,
    davidanson.vscode-markdownlint, ms-azuretools.vscode-docker,
@@ -393,7 +393,7 @@ JetBrains IDE가 있으면 jetbrains/Codex VSCode.xml 기준으로 같은 의도
 [적용] Navigation/Selection (Indentation Level Movement, Bracket Select, Project Manager)
 [적용] Git (GitLens, Git Graph)
 [적용] C/C++ (cpptools, Makefile Tools)
-[적용] Python (Python, Pylance, Black, Pylint)
+[적용] Python (Python, Pylance, Ruff)
 [적용] Web (Prettier, ESLint, Tailwind)
 [적용] Markdown (All in One, Preview GitHub Styles, Mermaid, Markdownlint)
 [적용] Remote/Container (SSH, Dev Containers, Docker)

@@ -17,15 +17,16 @@
 
 ### Formatting
 
-- Formatter: `black`
-- 기본 줄 길이: 88자
+- Formatter: `ruff format`
+- 기본 줄 길이: 전역 환경에서는 강제하지 않음
 - 자동 포맷: 저장 시 적용
 
 ### Linting
 
-- Linter: `pylint`
+- Linter: `ruff check`
 - 의미 없는 disable 남발을 피한다.
 - 네이밍, import, unused symbol, complexity 경고를 우선적으로 본다.
+- 전역 환경에서는 줄 길이 경고(`E501`)를 강제하지 않는다.
 
 ### Naming
 
@@ -70,7 +71,7 @@
 AI 에이전트가 Python 코드를 작성할 때:
 
 1. 기본 스타일은 Google Python Style Guide를 따른다.
-2. 포맷은 `black` 결과를 기준으로 본다.
+2. 포맷은 `ruff format` 결과를 기준으로 본다.
 3. 네이밍과 docstring은 사람이 읽기 쉬운 쪽을 우선한다.
 4. 예외 처리와 import는 간결하게 유지한다.
 5. 프로젝트에 기존 스타일이 더 엄격하면 프로젝트 스타일을 우선한다.

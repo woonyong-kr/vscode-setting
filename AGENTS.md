@@ -65,5 +65,5 @@
 ## Python Convention Policy
 
 - Python 스타일은 Google Python Style Guide를 기준으로 한다.
-- 포맷팅은 `black`, 린트는 `pylint`, 타입 힌트는 현대 Python typing 관례를 기본으로 한다.
+- 포맷팅과 린트는 `ruff` 를 기본으로 하고, 전역 환경에서는 줄 길이 제한으로 인한 자동 줄바꿈을 강제하지 않는다.
 - 이 저장소 문서에서 요약한 규칙과 외부 원문 링크를 함께 참고한다.

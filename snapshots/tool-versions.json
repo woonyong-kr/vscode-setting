@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T10:51:10.532523+00:00",
+  "generated_at": "2026-06-28T09:25:26.484385+00:00",
   "platform": {
     "system": "Darwin",
     "release": "25.3.0",
@@ -25,7 +25,7 @@
     "code": {
       "available": true,
       "command": "code",
-      "version": "1.123.0"
+      "version": "1.126.0"
     },
     "cursor": {
       "available": false
@@ -33,7 +33,7 @@
     "brew": {
       "available": true,
       "command": "brew",
-      "version": "Homebrew 5.1.15"
+      "version": "Homebrew 6.0.3"
     },
     "node": {
       "available": true,
@@ -58,15 +58,20 @@
       "command": "uv",
       "version": "uv 0.9.17 (2b5d65e61 2025-12-09)"
     },
+    "ruff": {
+      "available": true,
+      "command": "ruff",
+      "version": "ruff 0.15.17"
+    },
     "python3": {
       "available": true,
       "command": "python3",
-      "version": "Python 3.13.13"
+      "version": "Python 3.9.6"
     },
     "pip3": {
       "available": true,
       "command": "pip3",
-      "version": "pip 26.1.1 (python 3.13)"
+      "version": "pip 25.3 (python 3.9)"
     },
     "git": {
       "available": true,

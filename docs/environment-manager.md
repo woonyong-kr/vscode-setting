@@ -122,7 +122,7 @@ JetBrains keymap 적용 스크립트는 macOS와 Windows를 모두 지원 대상
 ## Coding Conventions
 
 - Python 컨벤션은 Google Python Style Guide를 기준으로 한다.
-- 이 저장소에서는 `black` + `pylint` + Google style naming/docstring 원칙 조합을 기본값으로 본다.
+- 이 저장소에서는 `ruff format` + `ruff check` + Google style naming/docstring 원칙 조합을 기본값으로 본다.
 - 상세 기준은 [Python Conventions](conventions/python-google.md)에 정리한다.
 
 ## Tooling Snapshots

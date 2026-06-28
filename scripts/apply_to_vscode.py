@@ -41,6 +41,7 @@ def mirror(src: Path, dst: Path) -> None:
             if item.is_dir():
                 mirror(item, target)
             else:
+                target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(item, target)
     else:
         dst.parent.mkdir(parents=True, exist_ok=True)
